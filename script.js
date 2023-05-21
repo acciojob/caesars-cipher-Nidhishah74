@@ -19,6 +19,8 @@ function rot13(encodedStr){
 		
 		// apply the shift to alphabetic characters
 		if (c >= 65 && c <= 90) {
+			// ((0 + 13) % 26) + 65 = 78
+			// ((38) % 26) + 65 = 77
 			decodedArr.push(String.fromCharCode(((c - 65 + 13) % 26) + 65));  // uppercase
 		} else {
 			decodedArr.push(encodedStr.charAt(i));  // non-alphabetic character
